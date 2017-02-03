@@ -1,7 +1,8 @@
 #include "stdafx.h"
 #include "Planet.h"
+
 namespace dx {
-	Planet::Planet(std::string newName)
+	Planet::Planet(char* newName)
 	{
 		Name = newName;
 	}
@@ -20,9 +21,9 @@ namespace dx {
 		}
 	}
 
-	Act Planet::CreateAct()
+	Actor Planet::CreateActor()
 	{
-		return Act();
+		return Actor(this, "unset", "Default");
 	}
 
 	Planet::~Planet()

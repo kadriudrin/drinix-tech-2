@@ -2,20 +2,23 @@
 #include "Act.h"
 
 namespace dx {
-	Act::Act(Planet newPlanet, std::string newName, std::string newTag)
-	{
-		
-	}
-
-	void Act::Init()
+	Actor::Actor()
 	{
 	}
+	Actor::Actor(Planet* MyNewPlanet, char* newName, char* newTag)
+	{
+		MyPlanet = MyNewPlanet;
+	}
 
-	void Act::Tick()
+	void Actor::Init()
 	{
 	}
 
-	Act::~Act()
+	void Actor::Tick()
+	{
+	}
+
+	Actor::~Actor()
 	{
 	}
 }

@@ -3,6 +3,10 @@
 int main()
 {
 	dx::Planet newp("newp");
-	dx::Act newact;
+	int a = 0;
+	while (a < 999999999)
+	{
+		a++;
+	}
     return 0;
 }

@@ -4,13 +4,13 @@ namespace dx {
 	class Planet
 	{
 	private:
-		std::vector<Act*> AllActors;
-		std::string Name;
+		std::vector<Actor*> AllActors;
+		char* Name;
 	public:
-		Planet(std::string newName);
+		Planet(char* newName);
 		void Init();
 		void Tick();
-		Act CreateAct();
+		Actor CreateActor();
 		~Planet();
 	};
 }
