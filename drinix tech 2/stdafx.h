@@ -6,11 +6,11 @@
 #include <vector>
 #include <iostream>
 
-#ifndef B_h
-#include "B.h"
+#ifndef Behaviour_h
+#include "Behaviour.h"
 #endif 
-#ifndef Act_h
-#include "Act.h"
+#ifndef Actor_h
+#include "Actor.h"
 #endif 
 #ifndef Planet_h
 #include "Planet.h"

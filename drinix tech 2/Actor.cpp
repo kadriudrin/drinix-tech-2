@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "Act.h"
+#include "Actor.h"
 
 namespace dx {
 	Actor::Actor()

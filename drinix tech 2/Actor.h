@@ -1,5 +1,5 @@
-#ifndef Act_h
-#define Act_h
+#ifndef Actor_h
+#define Actor_h
 namespace dx {
 	class Planet;
 
@@ -9,7 +9,7 @@ namespace dx {
 		unsigned ID;
 		char* Name;
 		char* Tag;
-		std::vector<Behavior*> AllBehaviors;
+		std::vector<Behaviour*> AllBehaviours;
 		Planet* MyPlanet;
 	public:
 		Actor();
@@ -25,15 +25,15 @@ namespace dx {
 	template<typename T>
 	inline void Actor::AddB()
 	{
-		AllBehaviors.push_back(new T());
+		AllBehaviours.push_back(new T());
 	}
 	template<typename T>
 	inline void Actor::GetB()
 	{
 		T t;
-		for (unsigned i = AllBehaviors.size(); i >= 0; i--)
-			if (t.Type == AllBehaviors.at(i)->Type)
-				return AllBehaviors.at(i);
+		for (unsigned i = AllBehaviours.size(); i >= 0; i--)
+			if (t.Type == AllBehaviours.at(i)->Type)
+				return AllBehaviours.at(i);
 			else
 				return nullptr;
 	}
