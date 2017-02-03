@@ -1,20 +1,20 @@
 #include "B.h"
 
 namespace dx {
-	B::B()
+	Behavior::Behavior()
 	{
 	}
 
-	void B::Init()
+	void Behavior::Init()
 	{
 	}
 
 
-	void B::Tick()
+	void Behavior::Tick()
 	{
 	}
 
-	B::~B()
+	Behavior::~Behavior()
 	{
 	}
 }

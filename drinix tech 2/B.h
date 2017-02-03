@@ -1,13 +1,13 @@
 #ifndef B_h
 #define B_h
 namespace dx {
-	class B
+	class Behavior
 	{
 	public:
-		B();
+		Behavior();
 		virtual void Init();
 		virtual void Tick();
-		~B();
+		~Behavior();
 	};
 }
 #endif
