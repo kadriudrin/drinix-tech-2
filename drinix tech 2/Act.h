@@ -8,6 +8,7 @@ namespace dx {
 		std::string Name;
 		std::string Tag;
 		Planet MyPlanet;
+		int a = 0 + 0 + 0 + 0 + 0 + 0;
 	public:
 		Act();
 		Act(Planet newPlanet, std::string newName = "unset", std::string newTag = "Default");
