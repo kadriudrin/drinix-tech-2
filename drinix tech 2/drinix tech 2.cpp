@@ -4,7 +4,7 @@ int main()
 {
 	dx::Planet newp("newp");
 	int a = 0;
-	while (a < 999999999)
+	while (a == 100)
 	{
 		a++;
 	}
