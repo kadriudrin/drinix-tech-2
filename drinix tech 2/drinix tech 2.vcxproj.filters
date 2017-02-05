@@ -13,41 +13,62 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Core">
+      <UniqueIdentifier>{129a8147-129b-42a5-9596-7778bd50615a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Actor Behavior System">
+      <UniqueIdentifier>{bf31414c-314c-468e-8271-f3f2a013fed2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Support">
+      <UniqueIdentifier>{aa789dad-7294-42e9-a24c-92d6344ce80d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Support\Main">
+      <UniqueIdentifier>{4fb0cab2-bf31-4f9c-b7b8-6b2b509c1afb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Engine Components">
+      <UniqueIdentifier>{cfe2b02e-7b50-4ee6-81da-f6bc7ed5d0e0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="stdafx.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="targetver.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Planet.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Actor.h">
+      <Filter>Core\Actor Behavior System</Filter>
     </ClInclude>
     <ClInclude Include="Behaviour.h">
-      <Filter>Header Files</Filter>
+      <Filter>Core\Actor Behavior System</Filter>
     </ClInclude>
-    <ClInclude Include="Actor.h">
+    <ClInclude Include="Planet.h">
+      <Filter>Core\Actor Behavior System</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Core\Support\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Core\Support\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Print.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="stdafx.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="drinix tech 2.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Planet.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Actor.cpp">
+      <Filter>Core\Actor Behavior System</Filter>
     </ClCompile>
     <ClCompile Include="Behaviour.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Core\Actor Behavior System</Filter>
     </ClCompile>
-    <ClCompile Include="Actor.cpp">
+    <ClCompile Include="Planet.cpp">
+      <Filter>Core\Actor Behavior System</Filter>
+    </ClCompile>
+    <ClCompile Include="drinix tech 2.cpp">
+      <Filter>Core\Support\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Core\Support\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Print.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -7,11 +7,11 @@ namespace dx {
 	{
 	private:
 		unsigned ID;
+		std::vector<Behaviour*> AllBehaviours;
+	public:
 		char* Name;
 		char* Tag;
-		std::vector<Behaviour*> AllBehaviours;
 		Planet* MyPlanet;
-	public:
 		Actor();
 		Actor(Planet* MyNewPlanet, char* newName = "unset", char* newTag = "Default");
 		void Init();
@@ -20,6 +20,8 @@ namespace dx {
 		void AddB();
 		template <typename T>
 		T* GetB();
+		void SetName(char* NewName);
+		void PrintAll();
 		~Actor();
 	};
 	template<typename T>
@@ -28,14 +30,14 @@ namespace dx {
 		AllBehaviours.push_back(new T());
 	}
 	template<typename T>
-	inline void Actor::GetB()
+	inline T* Actor::GetB()
 	{
 		T t;
-		for (unsigned i = AllBehaviours.size(); i >= 0; i--)
-			if (t.Type == AllBehaviours.at(i)->Type)
-				return AllBehaviours.at(i);
-			else
-				return nullptr;
+		for (unsigned i = 0; i < AllBehaviours.size(); i++)
+			if (t.Type == AllBehaviours.at(i)->Type) {
+				return dynamic_cast<T*>(AllBehaviours.at(i));
+				break;
+			}
 	}
 }
 #endif

@@ -5,6 +5,7 @@
 #include <tchar.h>
 #include <vector>
 #include <iostream>
+#include <memory>
 
 #ifndef Behaviour_h
 #include "Behaviour.h"
