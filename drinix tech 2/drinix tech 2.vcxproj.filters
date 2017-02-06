@@ -1,14 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
     <Filter Include="Resource Files">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
@@ -19,14 +11,31 @@
     <Filter Include="Core\Actor Behavior System">
       <UniqueIdentifier>{bf31414c-314c-468e-8271-f3f2a013fed2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Core\Engine Components">
+      <UniqueIdentifier>{cfe2b02e-7b50-4ee6-81da-f6bc7ed5d0e0}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Core\Support">
       <UniqueIdentifier>{aa789dad-7294-42e9-a24c-92d6344ce80d}</UniqueIdentifier>
     </Filter>
     <Filter Include="Core\Support\Main">
       <UniqueIdentifier>{4fb0cab2-bf31-4f9c-b7b8-6b2b509c1afb}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Core\Engine Components">
-      <UniqueIdentifier>{cfe2b02e-7b50-4ee6-81da-f6bc7ed5d0e0}</UniqueIdentifier>
+    <Filter Include="Game">
+      <UniqueIdentifier>{a4b4a648-b468-4e49-9a9b-48d206d9fe91}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Unnececary Comps">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Game\Game Components">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Core\Support\Debug">
+      <UniqueIdentifier>{8153e11d-57ba-469b-90d5-4d8117e589b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Support\Window">
+      <UniqueIdentifier>{1fb47164-be01-48ba-b9b3-d8da88df495d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -49,7 +58,13 @@
       <Filter>Core\Support\Main</Filter>
     </ClInclude>
     <ClInclude Include="Print.h">
-      <Filter>Header Files</Filter>
+      <Filter>Game\Game Components</Filter>
+    </ClInclude>
+    <ClInclude Include="d.h">
+      <Filter>Core\Support\Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="win.h">
+      <Filter>Core\Support\Window</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -69,7 +84,13 @@
       <Filter>Core\Support\Main</Filter>
     </ClCompile>
     <ClCompile Include="Print.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Game\Unnececary Comps</Filter>
+    </ClCompile>
+    <ClCompile Include="d.cpp">
+      <Filter>Core\Support\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="win.cpp">
+      <Filter>Core\Support\Window</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

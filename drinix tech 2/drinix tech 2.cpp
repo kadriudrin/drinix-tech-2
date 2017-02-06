@@ -1,31 +1,25 @@
 #include "stdafx.h"
 #include "Print.h"
-// drinix tech 2
 
-void GenActs(dx::Planet pn) {
-	for (unsigned i = 0; i < 1000; i++) {
-		std::unique_ptr<dx::Actor> hey(pn.CreateNewActor(new dx::Actor()));
-		hey->AddB<Print>();
-	}
-}
-
-int main()
+int main(int argc, char *argv[])
 {
+	win::CreateWin("Hey");
+
 	dx::Planet newp("newp");
 
-	int numEntities = 1000000;
-
-	for (unsigned i = 0; i < numEntities; i++) {
-		std::unique_ptr<dx::Actor> hey(newp.CreateNewActor(new dx::Actor()));
-		hey->AddB<Print>();
-		if (i % 2) {
-
+	dx::Actor myAct = newp.CreateActor(&myAct, "myAct");
+	myAct.AddB<Print>();
+	    
+	do 
+	{
+		CurrentPlanet->Init();
+		while (win::GameRunning) 
+		{
+			CurrentPlanet->Tick();
 		}
-		//std::cout << i << std::endl;
-	}
+	} while (Changed);
 
-	 
-	newp.KillAll();
+	win::Quit();
 
     return 0;
 }

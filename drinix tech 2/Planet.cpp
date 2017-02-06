@@ -5,6 +5,7 @@ namespace dx {
 	Planet::Planet(char* newName)
 	{
 		Name = newName;
+		CurrentPlanet = this;
 	}
 
 	void Planet::Init()

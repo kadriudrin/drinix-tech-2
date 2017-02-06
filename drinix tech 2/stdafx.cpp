@@ -4,5 +4,8 @@
 
 #include "stdafx.h"
 
+dx::Planet* CurrentPlanet = nullptr;
+bool Changed = false;
+
 // TODO: reference any additional headers you need in STDAFX.H
 // and not in this file

@@ -4,6 +4,7 @@
 namespace dx {
 	Actor::Actor()
 	{
+		MyPlanet = nullptr;
 	}
 	Actor::Actor(Planet* MyNewPlanet, char* newName, char* newTag)
 	{

@@ -4,6 +4,7 @@
 namespace dx {
 	Behaviour::Behaviour()
 	{
+		MyActor = nullptr;
 	}
 	Behaviour::Behaviour(char * newType)
 	{

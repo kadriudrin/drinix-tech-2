@@ -3,7 +3,7 @@
 namespace dx {
 	class Actor;
 
-	class Behaviour
+	struct Behaviour
 	{
 	protected:
 		Actor* MyActor;
