@@ -4,17 +4,13 @@ struct Print :
 	public dx::Behaviour
 {
 	Print() : Behaviour("Print") {};
-	float posx, posy;
-	float dirx, diry;
-	float dt = 0.02f;
 
 	void Init() {
-		std::cout << "INIT" << std::endl;
+		d::Log("INIT");
 	}
 
 	void Tick() {
-		posx += dirx * dt;
-		posy += diry * dt;
+		d::Log("TICK");
 	}
 	~Print();
 };

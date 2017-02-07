@@ -4,7 +4,8 @@
 
 #include "stdafx.h"
 
-dx::Planet* CurrentPlanet = nullptr;
+std::unique_ptr<dx::Planet> CurrentPlanet = nullptr;
+std::vector<std::unique_ptr<dx::Planet>> AllPlanets;
 bool Changed = false;
 
 // TODO: reference any additional headers you need in STDAFX.H

@@ -1,5 +1,7 @@
 #pragma once
-#include <SDL\SDL.h>
+#include <GL\glew.h>
+#include <SFML\Window.hpp>
+#include <SFML\Graphics.hpp>
 #include "targetver.h"
 #include <stdio.h>
 #include <tchar.h>
@@ -17,8 +19,12 @@
 #endif 
 #ifndef Planet_h
 #include "Planet.h"
-extern dx::Planet* CurrentPlanet;
+extern std::unique_ptr<dx::Planet> CurrentPlanet;
+extern std::vector<std::unique_ptr<dx::Planet>> AllPlanets;
 extern bool Changed;
+namespace dx {
+	void RunPlanet(char* PlanetName);
+}
 #endif 
 #ifndef D_h
 #include "d.h"

@@ -6,10 +6,15 @@ namespace dx {
 	{
 		Name = newName;
 		CurrentPlanet = this;
+		Load = nullptr;
 	}
 
 	void Planet::Init()
 	{
+		if (Load != nullptr)
+			Load();
+		else
+			d::LogError("LOAD IS A NULLPTR!");
 		for (unsigned i = 0; i < AllActors.size(); i++) {
 			AllActors.at(i)->Init();
 		}
@@ -20,6 +25,12 @@ namespace dx {
 		for (unsigned i = 0; i < AllActors.size(); i++) {
 			AllActors.at(i)->Tick();
 		}
+	}
+
+	void Planet::UnLoad()
+	{
+		Load = nullptr;
+		KillAll();
 	}
 
 	Actor Planet::CreateActor(Actor* Prefab, char* NewName, char* NewTag)
@@ -61,6 +72,8 @@ namespace dx {
 
 	void Planet::KillAll()
 	{
+		AllActors.erase(AllActors.begin(), AllActors.begin() + AllActors.size());
+		AllActors.clear();
 		std::vector<Actor*>().swap(AllActors);
 		AllActors.clear();
 		AllActors.shrink_to_fit();
@@ -68,5 +81,6 @@ namespace dx {
 
 	Planet::~Planet()
 	{
+		UnLoad();
 	}
 }

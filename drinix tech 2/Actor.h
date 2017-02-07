@@ -7,7 +7,7 @@ namespace dx {
 	{
 	private:
 		unsigned ID;
-		std::vector<Behaviour*> AllBehaviours;
+		std::vector<std::unique_ptr<Behaviour>> AllBehaviours;
 	public:
 		char* Name;
 		char* Tag;

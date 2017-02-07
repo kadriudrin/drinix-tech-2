@@ -13,8 +13,10 @@ namespace dx {
 
 	void Actor::Init()
 	{
-		for (unsigned i = 0; i < AllBehaviours.size(); i++)
+		for (unsigned i = 0; i < AllBehaviours.size(); i++) {
+			std::cout << "I: " << i << std::endl;
 			AllBehaviours.at(i)->Init();
+		}
 	}
 
 	void Actor::Tick()

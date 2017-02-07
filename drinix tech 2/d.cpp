@@ -43,6 +43,7 @@ namespace d {
 			system("color CF");
 			std::cout << "\n\nFATAL ERROR:  " << Msg << std::endl << "TERMINATING EXCECUTION !" << std::endl;
 			Pause();
+			win::Quit();
 		}
 	}
 
