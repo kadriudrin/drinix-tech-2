@@ -2,11 +2,11 @@
 #include "Print.h"
 
 dx::Planet newp("newp");
-dx::Actor myAct;
+dx::Pawn myPawn("Src/Cover.jpg");
 
 void HeyWorld() {
-	myAct = newp.CreateActor(&myAct, "myAct");
-	//myAct.AddB<Print>();
+	myPawn = newp.CreatePawn(&myPawn, "Src/Cover.jpg");
+	myPawn.AddB<Move>(&myPawn);
 }
 
 int main(int argc, char *argv[])

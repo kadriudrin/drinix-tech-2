@@ -4,36 +4,35 @@
 namespace win {
 
 	bool GameRunning = true;
-	sf::RenderWindow* Window = nullptr;
+	extern SDL_Renderer* Renderer = nullptr;
+	extern SDL_Window* Window = nullptr;
 
 	void CreateWin(char * Title, int Width, int Height)
 	{
-		sf::ContextSettings settings;
-		settings.depthBits = 24;
-		settings.majorVersion = 3;
-		settings.minorVersion = 3;
-		settings.antialiasingLevel = 8;
-		Window = new sf::RenderWindow(sf::VideoMode(Width, Height), Title, sf::Style::Default, settings);
-		if (Window == nullptr)
+		SDL_Init(SDL_INIT_EVERYTHING);
+		IMG_Init(IMG_INIT_JPG);
+		Window = SDL_CreateWindow(Title, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, Width, Height, 0);
+		Renderer = SDL_CreateRenderer(Window, -1, 0);
+		if (!Window)
 			d::FatalError("Could not Create Window!");
 		else
 			d::Log("Created Window!");
 		GameRunning = true;
-		glewInit();
-		glViewport(0, 0, Width, Height);
 	}
 
 	int Quit()
 	{
-		d::LogImportant("Program Is Quiting!");
+		//d::LogImportant("Program Is Quiting!");
 		GameRunning = false;
-		Window->close();
 		return 0;
 	}
 
 	int CloseDown()
 	{
-		delete Window;
+		SDL_DestroyWindow(Window);
+		SDL_DestroyRenderer(Renderer);
+		IMG_Quit();
+		SDL_Quit();
 		return 0;
 	}
 
@@ -43,17 +42,37 @@ namespace win {
 
 	void Update()
 	{
-		glClearColor(0.0, 1.0, 1.0, 1.0);
-		glClear(GL_DEPTH_BUFFER | GL_COLOR_BUFFER_BIT);
-		Window->display();
-		sf::Event Event;
-		while (Window->pollEvent(Event)) {
-			if (Event.type == sf::Event::Closed)
+		//d::LogError(SDL_GetError());
+		SDL_RenderClear(Renderer);
+		// Do The Rendering of every sprite
+		for (int i = 0; i < AllSprites.size(); i++) {
+			AllSprites.at(i)->Draw();
+		}
+		SDL_RenderPresent(Renderer);
+		SDL_Event Event;
+		while (SDL_PollEvent(&Event)) {
+			switch (Event.type)
+			{
+			case SDL_QUIT:
 				Quit();
+			case SDL_KEYDOWN:
+				switch (Event.key.keysym.scancode)
+				{
+				case SDL_SCANCODE_A:
+					SetResolution(100, 100);
+				default:
+					break;
+				}
+			default:
+				break;
+			}
 		}
 	}
 
-	void SetResolution()
+	void SetResolution(int newW, int newH)
 	{
+		if (newH == -1)
+			newH = newW;
+		SDL_SetWindowSize(Window, newW, newH);
 	}
 }

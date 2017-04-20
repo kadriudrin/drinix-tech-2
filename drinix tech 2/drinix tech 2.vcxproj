@@ -105,7 +105,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <AdditionalLibraryDirectories>$(SolutionDir)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;sfml-graphics-d.lib;sfml-system-d.lib;sfml-window-d.lib;glew32.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -147,20 +147,26 @@
     <ClInclude Include="Actor.h" />
     <ClInclude Include="Behaviour.h" />
     <ClInclude Include="d.h" />
+    <ClInclude Include="Pawn.h" />
     <ClInclude Include="Planet.h" />
+    <ClInclude Include="Behaviours.h" />
     <ClInclude Include="Print.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="Vec2.h" />
     <ClInclude Include="win.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Actor.cpp" />
     <ClCompile Include="Behaviour.cpp" />
+    <ClCompile Include="Behaviours.cpp" />
     <ClCompile Include="d.cpp" />
     <ClCompile Include="drinix tech 2.cpp" />
+    <ClCompile Include="Pawn.cpp" />
     <ClCompile Include="Planet.cpp" />
     <ClCompile Include="Print.cpp" />
     <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="Vec2.cpp" />
     <ClCompile Include="win.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -7,7 +7,7 @@ namespace dx {
 	{
 	private:
 		unsigned ID;
-		std::vector<std::unique_ptr<Behaviour>> AllBehaviours;
+		std::vector<Behaviour*> AllBehaviours;
 	public:
 		char* Name;
 		char* Tag;
@@ -16,18 +16,18 @@ namespace dx {
 		Actor(Planet* MyNewPlanet, char* newName = "unset", char* newTag = "Default");
 		void Init();
 		void Tick();
-		template <typename T>
-		void AddB();
+		template <typename T, typename ...Args>
+		void AddB(Args && ...args);
 		template <typename T>
 		T* GetB();
 		void SetName(char* NewName);
 		void PrintAll();
 		~Actor();
 	};
-	template<typename T>
-	inline void Actor::AddB()
+	template <typename T, typename ...Args>
+	inline void Actor::AddB(Args && ...args)
 	{
-		AllBehaviours.push_back(new T());
+		AllBehaviours.push_back(new T(std::forward<Args>(args)...));
 	}
 	template<typename T>
 	inline T* Actor::GetB()

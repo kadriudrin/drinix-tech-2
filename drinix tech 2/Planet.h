@@ -5,7 +5,7 @@ namespace dx {
 	{
 	private:
 		char* Name;
-		std::vector<std::unique_ptr<Actor>> AllActors;
+		std::vector<Actor*> AllActors;
 	public:
 		void (*Load)();
 		Planet(char* newName);
@@ -15,6 +15,10 @@ namespace dx {
 		Actor CreateActor(Actor* Prefab, char* NewName = "unset", char* NewTag = "Default");
 		Actor* CreateNewActor(Actor* Prefab, char* NewName = "unset", char* NewTag = "Default");
 		void CreateActor(char* NewName = "unset", char* NewTag = "Default");
+		Pawn CreatePawn(Pawn* Prefab, const char* SpriteLocation, char* NewName = "unset", char* NewTag = "Default");
+		Pawn* CreateNewPawn(Pawn* Prefab, const char* SpriteLocation, char* NewName = "unset", char* NewTag = "Default");
+		void CreatePawn(char* NewName = "unset", char* NewTag = "Default");
+
 		void PrintAll();
 		int NumOfActors();
 		void KillAll();

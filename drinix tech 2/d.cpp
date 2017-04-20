@@ -5,43 +5,52 @@ namespace d {
 
 	bool DebugMode = true;
 
-	void d::Log(char * Msg)
+	void d::Log(const char* const _Format, ...)
 	{
-		if (DebugMode)
-			std::cout << "cL:  " << Msg << std::endl;
+		if (DebugMode) {
+			printf(_Format);
+			std::cout << std::endl;
+		}
 	}
 
-	void LogImportant(char * Msg)
+	void d::LogImportant(const char* const _Format, ...)
 	{
 		if (DebugMode) {
 			system("color A2");
-			std::cout << "\ncIMPORTANT:  " << Msg << std::endl;
+			printf(_Format);
+			std::cout << std::endl;
 			Pause();
 		}
 	}
 
-	void d::LogError(char * Msg)
+	void d::LogError(const char* const _Format, bool IsPause, ...)
 	{
 		if (DebugMode) {
-			system("color C");
-			std::cout << "\ncERROR:  " << Msg << std::endl;
-			win::Quit();
+			if (_Format != "") {
+				system("color C");
+				printf(_Format);
+				std::cout << std::endl;
+				if (IsPause)
+					Pause();
+			}
 		}
 	}
 
-	void d::LogWarning(char * Msg)
+	void d::LogWarning(const char* const _Format, ...)
 	{
 		if (DebugMode) {
 			system("color E");
-			std::cout << "cWARNING:  " << Msg << std::endl;
+			printf(_Format);
+			std::cout << std::endl;
 		}
 	}
 
-	void d::FatalError(char * Msg)
+	void d::FatalError(const char* const _Format, ...)
 	{
 		if (DebugMode) {
 			system("color CF");
-			std::cout << "\n\nFATAL ERROR:  " << Msg << std::endl << "TERMINATING EXCECUTION !" << std::endl;
+			printf(_Format);
+			std::cout << std::endl;
 			Pause();
 			win::Quit();
 		}

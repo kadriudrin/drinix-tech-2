@@ -37,6 +37,9 @@
     <Filter Include="Core\Support\Window">
       <UniqueIdentifier>{1fb47164-be01-48ba-b9b3-d8da88df495d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Core\Math">
+      <UniqueIdentifier>{2c7ecca8-d332-4016-a6ef-ad7407eb1865}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -66,6 +69,15 @@
     <ClInclude Include="win.h">
       <Filter>Core\Support\Window</Filter>
     </ClInclude>
+    <ClInclude Include="Behaviours.h">
+      <Filter>Game\Game Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Pawn.h">
+      <Filter>Game\Game Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Vec2.h">
+      <Filter>Core\Math</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Actor.cpp">
@@ -91,6 +103,15 @@
     </ClCompile>
     <ClCompile Include="win.cpp">
       <Filter>Core\Support\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="Pawn.cpp">
+      <Filter>Game\Unnececary Comps</Filter>
+    </ClCompile>
+    <ClCompile Include="Vec2.cpp">
+      <Filter>Core\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Behaviours.cpp">
+      <Filter>Game\Game Components</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

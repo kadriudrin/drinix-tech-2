@@ -36,7 +36,7 @@ namespace dx {
 	Actor Planet::CreateActor(Actor* Prefab, char* NewName, char* NewTag)
 	{
 		Prefab->SetName(NewName);
-		AllActors.push_back(Prefab);
+		AllActors.push_back(std::move(Prefab));
 		return Actor(this, NewName, NewTag);
 	}
 
@@ -48,6 +48,29 @@ namespace dx {
 	}
 
 	void Planet::CreateActor(char * NewName, char * NewTag)
+	{
+		AllActors.push_back(&Actor(this, NewName, NewTag));
+	}
+
+	Pawn Planet::CreatePawn(Pawn * Prefab, const char* SpriteLocation, char * NewName, char * NewTag)
+	{
+		Prefab->SetName(NewName);
+		//Prefab->sprite->SetImage(SpriteLocation);
+		//Prefab->sprite->transform = Prefab->transform;
+		AllActors.push_back(std::move(Prefab));
+		return Pawn(this, NewName, NewTag);
+	}
+
+	Pawn * Planet::CreateNewPawn(Pawn * Prefab, const char* SpriteLocation, char * NewName, char * NewTag)
+	{
+		Prefab->SetName(NewName);		
+		//Prefab->sprite->SetImage(SpriteLocation);
+		//Prefab->sprite->transform = Prefab->transform;
+		AllActors.push_back(Prefab);
+		return Prefab;
+	}
+
+	void Planet::CreatePawn(char * NewName, char * NewTag)
 	{
 		AllActors.push_back(&Actor(this, NewName, NewTag));
 	}
